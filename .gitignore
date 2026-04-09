@@ -1,0 +1,15 @@
+# Secrets
+wol-webhook/.env
+jarvis-startup/config.py
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
