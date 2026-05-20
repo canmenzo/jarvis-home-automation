@@ -1,5 +1,6 @@
 import asyncio
 import subprocess
+import sys
 import requests
 import feedparser
 import edge_tts
@@ -14,6 +15,11 @@ import soundfile as sf
 import config
 
 static_ffmpeg.add_paths()
+
+# Only run when woken via WoL (network adapter), not on manual boot
+_wake = subprocess.run(['powercfg', '/lastwake'], capture_output=True, text=True).stdout.lower()
+if 'network' not in _wake and 'wake on' not in _wake:
+    sys.exit(0)
 
 WMO_CODES = {
     0: "Clear sky", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
