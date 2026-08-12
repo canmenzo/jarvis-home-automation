@@ -5,3 +5,7 @@ sounddevice
 soundfile
 numpy
 static-ffmpeg
+
+# Optional — only needed if CALENDAR_ICS_URL is set in config.py
+icalendar
+recurring-ical-events

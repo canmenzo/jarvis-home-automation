@@ -16,6 +16,11 @@ WEATHER_LAT = 0.0000
 WEATHER_LON = 0.0000
 WEATHER_CITY = "Your City"
 
+# Calendar (optional — leave empty to skip)
+# Google Calendar → Settings → your calendar → "Secret address in iCal format".
+# Treat this URL as a password: anyone holding it can read your calendar.
+CALENDAR_ICS_URL = ""
+
 # Spotify
 # Your Spotify URI — right-click a song/playlist → Share → Copy Spotify URI
 SPOTIFY_PLAYLIST_URI = "spotify:track:39shmbIHICJ2Wxnk1fPSdz"  # Iron Man OST — Driving With the Top Down

@@ -2,6 +2,12 @@
 wol-webhook/.env
 jarvis-startup/config.py
 
+# Runtime
+jarvis-startup/jarvis.log*
+
+# Scratch copies of the old C:\tmp layout
+tmp/
+
 # Python
 __pycache__/
 *.pyc
