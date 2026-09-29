@@ -1,6 +1,6 @@
 # 🤖 J.A.R.V.I.S. Home Automation
 
-![python](https://img.shields.io/badge/python-3.11+-blue?logo=python&logoColor=white) ![platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white) ![webhook](https://img.shields.io/badge/webhook-Docker-2496ED?logo=docker&logoColor=white)
+![python](https://img.shields.io/badge/python-3.11+-blue?logo=python&logoColor=white) ![platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white) ![webhook](https://img.shields.io/badge/webhook-Docker-2496ED?logo=docker&logoColor=white) [![license](https://img.shields.io/github/license/canmenzo/jarvis-home-automation)](LICENSE)
 
 > *"Good morning, sir. Today's forecast..."*
 
@@ -96,4 +96,4 @@ J.A.R.V.I.S. = *Just A Rather Very Intelligent System*.
 </details>
 
 ### 📄 License
-MIT (stated here; no LICENSE file in the repo yet).
+[MIT](LICENSE)
