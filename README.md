@@ -11,7 +11,7 @@ iPhone (Siri) → webhook on an always-on box → WoL magic packet → PC boots 
 ```
 
 ### ✨ Features
-- ⚡ Tiny Flask webhook in Docker that sends a WoL magic packet on `GET /wakeup?token=...` (constant-time token check, `/health` endpoint)
+- ⚡ Tiny Flask webhook in Docker that sends a WoL magic packet on `GET /wakeup` with an `Authorization: Bearer` header or `?token=` (constant-time token check, `/health` endpoint)
 - 🗣️ British TTS voice (`en-GB-RyanNeural` via edge-tts) with greetings that change by time of day and rotate so it never sounds canned
 - 🌦️ Current weather from open-meteo.com (no API key), with a nudge for an umbrella, water, or a coat
 - 🛡️ Threat brief from the CISA KEV catalog: new exploited vulns this week, the newest one, and how many are tied to ransomware (falls back to a Hacker News / BleepingComputer headline)
@@ -27,7 +27,7 @@ iPhone (Siri) → webhook on an always-on box → WoL magic packet → PC boots 
 cd wol-webhook
 cp .env.example .env   # set WOL_MAC (the PC's MAC) and WOL_TOKEN (a long random string)
 docker compose up -d
-curl "http://<host>:8765/wakeup?token=<your_token>"   # should wake the PC
+curl -H "Authorization: Bearer <your_token>" "http://<host>:8765/wakeup"   # should wake the PC
 ```
 
 > `network_mode: host` is required. Magic packets don't survive Docker's NAT.
@@ -35,7 +35,7 @@ curl "http://<host>:8765/wakeup?token=<your_token>"   # should wake the PC
 **2. Siri Shortcut** (iPhone)
 
 1. Shortcuts → New Shortcut → **Get Contents of URL**
-2. URL `http://<host>:8765/wakeup?token=<your_token>`, method GET
+2. URL `http://<host>:8765/wakeup`, method GET, header `Authorization: Bearer <your_token>` (or `?token=<your_token>` in the URL, which ends up in logs)
 3. Name it **"Wake up Daddy's Home"** (optional: Accessibility → Touch → Back Tap → Double Tap)
 
 **3. Jarvis greeter** (Windows PC)

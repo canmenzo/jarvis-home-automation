@@ -4,6 +4,10 @@ services:
     build: .
     network_mode: host
     restart: always
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     environment:
       - PYTHONUNBUFFERED=1
       - WOL_MAC=${WOL_MAC}
